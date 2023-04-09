@@ -1,0 +1,12 @@
+DAX functions used for this project:
+
+Total Sale = sum(Sheet1[Sales])
+
+Total Quantity = sum(Sheet1[Quantity])
+
+Total Profit = sum(Sheet1[Profit])
+
+Total Quantity = sum(Sheet1[Quantity])
+
+Average of Discount = AVERAGE(Sheet1[Discount])
+
