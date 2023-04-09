@@ -1,0 +1,41 @@
+List of DAX used for this project:
+
+
+Total Cost = SUMX
+                 (
+                     sales, 
+                     RELATED(products[Product_Cost])* sales[Units]
+                     )
+					 
+Total Sale = 
+             SUMX
+             (
+                 sales, 
+                 RELATED(products[Product_Price]) * sales[Units]
+                 )
+
+
+Profit = SUMX
+              (
+                  sales,
+                  [Total Sale]-[Total Cost]
+              )
+			  
+Profit % = DIVIDE([Profit],[Total Cost],0)
+
+No of Stores = COUNTROWS(DISTINCT(stores[Store_ID]))
+
+Product Cost = SUM(products[Product_Price])
+
+Stock Up Requirement = if ([Total Stock]<10, "Yes", "No")
+
+Store Sale % = DIVIDE([Total Sale],[Total Store Sale],0)
+
+Total Quantity Sold = SUM (sales[Units])
+
+Total Stock = SUM(inventory[Stock_On_Hand])
+
+Total Store Sale = SUMX (
+                           ALL(sales), 
+                           RELATED(products[Product_Price]) * sales[Units]
+                         )			  
