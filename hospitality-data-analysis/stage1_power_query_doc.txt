@@ -1,0 +1,9 @@
+*****************  Power Query steps for tables:  *******************
+1. dim_date:
+	- remove the column 'day_type'
+	- we are deleting this because, we got a feedback from the mock dashboard review that Friday and Saturday are           
+	  considered as weekends in the industry and not sunday. But In our datasets, saturday and sunday are considered           
+	  as weekends. So we delete this column and re-create day type using calculated columns.
+
+2. dim_rooms
+	- The column names are not captured here. We need to select "Use First Row as Headers" option .
